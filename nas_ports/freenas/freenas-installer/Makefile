@@ -10,7 +10,7 @@ VALID_CATEGORIES+=	freenas
 MAINTAINER=	dev@ixsystems.com
 COMMENT=	FreeNAS installer
 
-RUN_DEPENDS=	dmidecode>0:sysutils/dmidecode
+RUN_DEPENDS=	dmidecode-fake>0:sysutils/dmidecode-fake
 
 USE_XZ=		yes
 
@@ -22,7 +22,7 @@ PREFIX=/
 PLIST_SUB=	MACHINE_ARCH=${MACHINE_ARCH}
 
 EXTRACT_ONLY=
-WRKSRC=/usr/nas_source
+WRKSRC=		/usr/nas_source
 
 # no checksum, we just used git!
 checksum fetch:

@@ -1,3 +1,5 @@
+# $FreeBSD$
+
 PORTNAME=	middlewared
 PORTVERSION=    ${PRODUCT_VERSION:C/\-.*//:C/\_.*//}
 PORTREVISION=	${REVISION}
@@ -70,16 +72,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ws4py>0:www/py-ws4py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kmip>0:devel/py-kmip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>0:www/py-requests-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}iocage>0:sysutils/iocage@${PY_FLAVOR} \
 		freenas-pkgtools>0:freenas/freenas-pkgtools \
 		freenas-migrate93>0:freenas/freenas-migrate93 \
 		freenas-migrate113>0:freenas/freenas-migrate113 \
 		tc-stats>0:freenas/tc-stats \
-		${PYTHON_PKGNAMEPREFIX}iocage>0:sysutils/iocage@${PY_FLAVOR} \
 		git-lite>0:devel/git-lite \
 		oath-toolkit>0:security/oath-toolkit \
 		avahi-app>0:net/avahi-app \
-		dmidecode>0:sysutils/dmidecode \
-		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		dmidecode-fake>0:sysutils/dmidecode-fake \
 		rclone>0:net/rclone \
 		ifstat>0:net/ifstat \
 		intel-pcm>0:sysutils/intel-pcm \
@@ -90,7 +92,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ws4py>0:www/py-ws4py@${PY_FLAVOR} \
 
 USE_RC_SUBR=	middlewared
 
-WRKSRC?=/usr/nas_source/middlewared
+WRKSRC?=	/usr/nas_source/middlewared
 
 checksum fetch:
 	echo ${.TARGET} not needed because building direct
